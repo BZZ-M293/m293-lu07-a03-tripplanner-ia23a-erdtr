@@ -8,7 +8,92 @@
 <body>
 
 <h1>Reisebuchungs-Formular</h1>
+<form action="https://it.bzz.ch/demo/formdata/index.php" method="post">
+<label for="abflughafen">Abflughafen:</label><br>
+<select id="abflughafen" name="abflughafen">
+  <optgroup label="Deutschland">
+    <option value="fra">Frankfurt am Main (FRA)</option>
+    <option value="muc">München (MUC)</option>
+    <option value="ber">Berlin Brandenburg (BER)</option>
+    <option value="ham">Hamburg (HAM)</option>
+  </optgroup>
+  <optgroup label="Österreich">
+    <option value="vie">Wien (VIE)</option>
+    <option value="szg">Salzburg (SZG)</option>
+    <option value="inn">Innsbruck (INN)</option>
+    <option value="grz">Graz (GRZ)</option>
+  </optgroup>
+  <optgroup label="Italien">
+    <option value="fco">Rom Fiumicino (FCO)</option>
+    <option value="mxp">Mailand Malpensa (MXP)</option>
+    <option value="vce">Venedig Marco Polo (VCE)</option>
+    <option value="flr">Florenz (FLR)</option>
+  </optgroup>
+  <optgroup label="Frankreich">
+    <option value="cdg">Paris Charles de Gaulle (CDG)</option>
+    <option value="ory">Paris Orly (ORY)</option>
+    <option value="nce">Nizza (NCE)</option>
+    <option value="lys">Lyon (LYS)</option>
+  </optgroup>
+</select><br><br>
 
+<legend>Art der Unterkunft:</legend>
+<input type="radio" id="hotel" name="unterkunft" value="hotel">
+<label for="hotel">Hotel</label><br>
+<input type="radio" id="ferienwohnung" name="unterkunft" value="ferienwohnung">
+<label for="ferienwohnung">Ferienwohnung</label><br>
+<input type="radio" id="hostel" name="unterkunft" value="hostel">
+<label for="hostel">Hostel</label><br><br>
+
+<legend>Zusätzliche Dienstleistungen:</legend>
+<input type="checkbox" id="reiseversicherung" name="zusatzdienstleistungen[]" value="reiseversicherung">
+<label for="reiseversicherung">Reiseversicherung</label><br>
+<input type="checkbox" id="flughafentransfer" name="zusatzdienstleistungen[]" value="flughafentransfer">
+<label for="flughafentransfer">Flughafentransfer</label><br>
+<input type="checkbox" id="zusatzgepaeck" name="zusatzdienstleistungen[]" value="zusatzgepaeck">
+<label for="zusatzgepaeck">Zusätzliches Gepäck</label><br><br>
+
+<legend>Zusätzliche Dienstleistungen:</legend>
+<label for="startdatum">Anfangsdatum:</label>
+<input type="date" id="startdatum" name="startdatum"><br>
+<label for="enddatum">Enddatum:</label>
+<input type="date" id="enddatum" name="enddatum"><br><br>
+<label for="reisedauer">Reisedauer (in Tagen, zwischen 1 und 21):</label>
+<input type="number" id="reisedauer" name="reisedauer" min="1" max="21" required><br><br>
+
+<label for="personen">Anzahl Personen:</label>
+<input type="number" id="personen" name="personen" required><br><br>
+
+<label for="fluggesellschaft">Bevorzugte Fluggesellschaft:</label><br>
+<select id="fluggesellschaft" name="fluggesellschaft">
+  <option value="lufthansa">Lufthansa</option>
+  <option value="swiss">Swiss</option>
+  <option value="emirates">Emirates</option>
+</select><br><br>
+
+
+<legend>Zusätzliche optionale Dienstleistungen:</legend>
+<input type="checkbox" id="priority-check-in" name="zusatzdienstleistungen[]" value="priority-check-in">
+<label for="priority-check-in">Priority-Check-In</label><br>
+<input type="checkbox" id="zusatz-handgepaeck" name="zusatzdienstleistungen[]" value="zusatz-handgepaeck">
+<label for="zusatz-handgepaeck">Zusätzliches Handgepäck</label><br>
+<input type="checkbox" id="mietwagen" name="zusatzdienstleistungen[]" value="mietwagen">
+<label for="mietwagen">Mietwagen buchen</label><br><br>
+
+<label for="reiseziel">Reiseziel:</label><br>
+<input type="text" id="reiseziel" name="reiseziel" list="reiseziele"><br>
+<datalist id="reiseziele">
+  <option value="Paris">
+  <option value="London">
+  <option value="Berlin">
+</datalist><br>
+
+<label for="email">E-Mail-Adresse:</label><br>
+<input type="email" id="email" name="email" required><br><br>
+
+<input type="reset" value="Zurücksetzen">
+<input type="submit" value="Absenden">
+</form>
 
 </body>
 </html>
